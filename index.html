@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canary AI – Quant Consulting, AI Lab &amp; Institute</title>
+    <meta name="description"
+        content="Canary AI builds AI-powered quantitative finance systems and trains elite researchers through an in-house institute." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════ -->
+    <nav>
+        <a href="#" class="nav-brand">
+            <div class="logo-box">
+                <img src="logo.jpeg" alt="Canary AI Logo"
+                    style="width:28px;height:28px;object-fit:contain;border-radius:4px;" />
+            </div>
+            <span class="brand-name">Canary AI</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#institute">Institute</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="#contact" class="nav-cta-btn">Contact Us</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="#services" onclick="closeMobile()">Services</a></li>
+            <li><a href="#process" onclick="closeMobile()">Process</a></li>
+            <li><a href="#institute" onclick="closeMobile()">Institute</a></li>
+            <li><a href="#testimonials" onclick="closeMobile()">Reviews</a></li>
+            <li><a href="#faq" onclick="closeMobile()">FAQ</a></li>
+            <li><a href="#contact" onclick="closeMobile()">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+    <section class="hero" id="top">
+        <div class="hero-grid"></div>
+        <div class="hero-inner">
+            <div class="hero-badge">🚀 AI-Powered Quantitative Finance</div>
+            <h1>
+                Where <em>Artificial Intelligence</em><br />
+                Meets Financial Markets
+            </h1>
+            <p class="hero-sub">
+                Canary AI builds cutting-edge quantitative trading systems, AI risk
+                management tools, and trains the next generation of quant researchers
+                through our elite in-house institute.
+            </p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-primary" id="hero-consult-btn">📅 Book a Consultation</a>
+                <a href="#institute" class="btn btn-outline" id="hero-fellowship-btn">Apply for Fellowship →</a>
+            </div>
+            <div class="hero-scroll">Scroll to explore<span></span></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       TRUST BAR
+  ═══════════════════════════════════════ -->
+    <div class="trust-bar">
+        <p>Trusted expertise in</p>
+        <div class="trust-logos">
+            <span>Algorithmic Trading</span>
+            <span>•</span>
+            <span>AI / ML Research</span>
+            <span>•</span>
+            <span>Quantitative Finance</span>
+            <span>•</span>
+            <span>Fintech Consulting</span>
+            <span>•</span>
+            <span>Risk Management</span>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+       STATS STRIP
+  ═══════════════════════════════════════ -->
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-val">AI-First</div>
+            <div class="stat-lbl">Methodology</div>
+        </div>
+        <div class="stat">
+            <div class="stat-val">3+</div>
+            <div class="stat-lbl">Core Services</div>
+        </div>
+        <div class="stat">
+            <div class="stat-val">3</div>
+            <div class="stat-lbl">Fellowship Tracks</div>
+        </div>
+        <div class="stat">
+            <div class="stat-val">Live</div>
+            <div class="stat-lbl">Real Projects</div>
+        </div>
+        <div class="stat">
+            <div class="stat-val">100%</div>
+            <div class="stat-lbl">Research-Driven</div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+       SERVICES
+  ═══════════════════════════════════════ -->
+    <section class="sec sec-alt" id="services">
+        <div class="sec-hd reveal">
+            <span class="eyebrow">What We Do</span>
+            <h2 class="sec-title">Our Core Services</h2>
+            <p class="sec-sub">End-to-end AI and quant solutions for traders, funds, and fintech companies.</p>
+        </div>
+
+        <div class="grid3">
+            <div class="card reveal">
+                <div class="card-icon ci-amber">📈</div>
+                <h4>Quantitative Trading Systems</h4>
+                <p>We design and deploy AI-driven and rule-based trading strategies, backtesting frameworks, signal
+                    generation engines, and fully automated execution systems for financial markets.</p>
+            </div>
+            <div class="card reveal">
+                <div class="card-icon ci-indigo">🛡️</div>
+                <h4>AI Risk Management</h4>
+                <p>Advanced portfolio analytics, drawdown control models, real-time AI-driven risk monitoring, and
+                    volatility forecasting solutions tailored for traders and institutional clients.</p>
+            </div>
+            <div class="card reveal">
+                <div class="card-icon ci-emerald">🤖</div>
+                <h4>Fintech &amp; AI Product Consulting</h4>
+                <p>End-to-end consulting for fintech platforms, trading dashboards, AI model integration, data
+                    pipelines, and scalable financial technology architecture.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       HOW IT WORKS
+  ═══════════════════════════════════════ -->
+    <section class="sec" id="process">
+        <div class="sec-hd reveal">
+            <span class="eyebrow">How It Works</span>
+            <h2 class="sec-title">Our Engagement Process</h2>
+            <p class="sec-sub">From first conversation to live deployment — a clear, structured path.</p>
+        </div>
+
+        <div class="steps">
+            <div class="step reveal">
+                <div class="step-num">01</div>
+                <h4>Discovery Call</h4>
+                <p>We learn your goals, infrastructure, and market exposure in a focused strategy session.</p>
+            </div>
+            <div class="step reveal">
+                <div class="step-num">02</div>
+                <h4>Research &amp; Design</h4>
+                <p>Our quant researchers design a custom AI or rule-based solution tailored to your objectives.</p>
+            </div>
+            <div class="step reveal">
+                <div class="step-num">03</div>
+                <h4>Build &amp; Backtest</h4>
+                <p>We develop, rigorously backtest, and refine the system with real historical market data.</p>
+            </div>
+            <div class="step reveal">
+                <div class="step-num">04</div>
+                <h4>Deploy &amp; Monitor</h4>
+                <p>We launch the system live and provide ongoing monitoring, reporting, and optimization support.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       INSTITUTE & FELLOWSHIP
+  ═══════════════════════════════════════ -->
+    <section class="sec sec-alt" id="institute">
+        <div class="sec-hd reveal">
+            <span class="eyebrow">Canary AI Institute</span>
+            <h2 class="sec-title">Research &amp; Training Institute</h2>
+            <p class="sec-sub">Building the next generation of AI quant researchers through real-world exposure.</p>
+        </div>
+
+        <!-- Institute Features -->
+        <div class="grid3" style="margin-bottom: 5rem;">
+            <div class="feat-card reveal">
+                <div class="feat-num">01</div>
+                <h4>Industry-Focused Training</h4>
+                <p>Hands-on learning in quantitative finance, algorithmic trading, Python, ML, and financial data
+                    analysis with real market exposure.</p>
+            </div>
+            <div class="feat-card reveal">
+                <div class="feat-num">02</div>
+                <h4>Real Project Experience</h4>
+                <p>Fellows work directly on live AI models, production trading systems, and fintech research projects
+                    within the Canary AI ecosystem.</p>
+            </div>
+            <div class="feat-card reveal">
+                <div class="feat-num">03</div>
+                <h4>Selective Admission</h4>
+                <p>Candidates are shortlisted through rigorous technical tests and performance evaluations to uphold
+                    elite research and industry standards.</p>
+            </div>
+        </div>
+
+        <!-- Fellowship Tracks -->
+        <div class="sec-hd reveal">
+            <span class="eyebrow">Fellowship Program</span>
+            <h2 class="sec-title">Choose Your Track</h2>
+        </div>
+
+        <div class="grid3">
+            <div class="track tr-amber reveal">
+                <div class="card-tag tag-amber">🏆 Merit-Based</div>
+                <h5>Sponsored Fellowship</h5>
+                <p>For top performers who clear our technical screening process — no program fees required.</p>
+                <ul>
+                    <li>Work on live AI &amp; quant research projects</li>
+                    <li>Potential stipend for exceptional fellows</li>
+                    <li>Full-time opportunities at Canary AI</li>
+                    <li>Direct mentorship from senior researchers</li>
+                </ul>
+            </div>
+            <div class="track tr-indigo reveal">
+                <div class="card-tag tag-indigo">📚 Paid Track</div>
+                <h5>Self-Sponsored Fellowship</h5>
+                <p>A structured research and training track for ambitious students seeking real-world mentorship.</p>
+                <ul>
+                    <li>Structured curriculum with live projects</li>
+                    <li>Access to Canary AI's research environment</li>
+                    <li>Mentorship from quant professionals</li>
+                    <li>Certificate of completion</li>
+                </ul>
+            </div>
+            <div class="track tr-emerald reveal">
+                <div class="card-tag tag-emerald">🚀 Growth Path</div>
+                <h5>Performance-Based Progression</h5>
+                <p>High-performing fellows earn advancement into advanced research roles and full-time positions.</p>
+                <ul>
+                    <li>Transition to paid internship roles</li>
+                    <li>Advanced quant research responsibilities</li>
+                    <li>Full-time position consideration</li>
+                    <li>Equity-like performance incentives</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;" class="reveal">
+            <a href="#contact" class="btn btn-indigo" id="apply-fellowship-btn">Apply for Fellowship Program →</a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       TESTIMONIALS
+  ═══════════════════════════════════════ -->
+    <section id="testimonials">
+        <div class="sec-hd reveal" style="padding: 0 2rem;">
+            <span class="eyebrow">What People Say</span>
+            <h2 class="sec-title">Fellows &amp; Client Reviews</h2>
+            <p class="sec-sub">Hear from those who've worked with and trained at Canary AI.</p>
+        </div>
+
+        <div class="testi-grid">
+            <div class="testi reveal">
+                <div class="stars">★★★★★</div>
+                <p class="testi-text">"The fellowship at Canary AI was transformative. I went from understanding basic
+                    Python to building live trading signal pipelines in just a few months. Absolutely elite
+                    environment."</p>
+                <div class="testi-author">
+                    <div class="avatar av-a">RK</div>
+                    <div class="author-info">
+                        <div class="name">Rahul K.</div>
+                        <div class="role">Sponsored Fellow, IIT Graduate</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi reveal">
+                <div class="stars">★★★★★</div>
+                <p class="testi-text">"Canary AI rebuilt our backtesting infrastructure from scratch. The new system is
+                    10x faster and the AI-driven risk overlay has measurably reduced our drawdowns."</p>
+                <div class="testi-author">
+                    <div class="avatar av-b">SP</div>
+                    <div class="author-info">
+                        <div class="name">Sanjay P.</div>
+                        <div class="role">Portfolio Manager, HNI Fund</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi reveal">
+                <div class="stars">★★★★★</div>
+                <p class="testi-text">"The self-sponsored fellowship gave me access to real quant projects I'd never
+                    have touched otherwise. The mentorship quality is unmatched. Worth every rupee."</p>
+                <div class="testi-author">
+                    <div class="avatar av-c">AM</div>
+                    <div class="author-info">
+                        <div class="name">Ananya M.</div>
+                        <div class="role">Self-Sponsored Fellow, NIT Trichy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       FAQ
+  ═══════════════════════════════════════ -->
+    <section id="faq">
+        <div class="sec-hd reveal" style="padding: 0 2rem 0;">
+            <span class="eyebrow">Got Questions?</span>
+            <h2 class="sec-title">Frequently Asked Questions</h2>
+            <p class="sec-sub">Everything you need to know about our services and fellowship program.</p>
+        </div>
+
+        <div class="faq-wrap">
+            <div class="faq-item reveal">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    Who is Canary AI for?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>Canary AI serves proprietary traders, hedge funds, family offices, fintech startups, and
+                        ambitious students or early-career professionals looking to break into quantitative finance and
+                        AI-driven markets.</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    What does the Sponsored Fellowship cost?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>The Sponsored Fellowship is completely free for candidates who clear our technical screening
+                        process. Top-performing fellows may even receive a stipend and full-time offers. Only the
+                        Self-Sponsored track requires a fee.</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    What background do I need to apply?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>We look for strong analytical thinking, some programming exposure (Python preferred), and genuine
+                        passion for financial markets or AI research. You don't need a finance degree — your interest
+                        and aptitude matter most.</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    How long does the fellowship last?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>The fellowship is typically structured over 3–6 months with milestones. Based on performance,
+                        fellows can extend into advanced research roles or convert to internships and full-time
+                        positions at Canary AI.</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    Can firms engage Canary AI for short-term projects?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>Absolutely. We offer flexible consulting engagements from one-time strategy audits to ongoing
+                        retainer partnerships. Reach out via the contact section and we'll scope the right arrangement
+                        for your needs.</p>
+                </div>
+            </div>
+
+            <div class="faq-item reveal">
+                <button class="faq-q" onclick="toggleFaq(this)">
+                    Is training remote or in-person?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                    <p>The fellowship is conducted in a hybrid or fully remote format, making it accessible to students
+                        across the country. Specific sessions and collaboration may be in-person based on geography and
+                        needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       CTA / CONTACT
+  ═══════════════════════════════════════ -->
+    <section class="sec" id="contact">
+        <div class="cta-box reveal">
+            <span class="eyebrow">Ready to Start?</span>
+            <h2>Let's Build the Future<br />of Finance Together</h2>
+            <p>Whether you're a fund looking for AI-edge or a student ready to enter the world of quant — Canary AI is
+                your launchpad.</p>
+            <div class="cta-btns">
+                <a href="mailto:canaryailtd@gmail.com" class="btn btn-primary" id="cta-consult-btn">📅 Book a
+                    Consultation</a>
+                <a href="mailto:canaryailtd@gmail.com?subject=Fellowship Application" class="btn btn-outline"
+                    id="cta-apply-btn">🎓 Apply for Fellowship</a>
+            </div>
+            <div class="cta-contact-info">
+                <div class="cta-contact-item">
+                    <div class="label">Email</div>
+                    <a href="mailto:canaryailtd@gmail.com">canaryailtd@gmail.com</a>
+                </div>
+                <div class="cta-contact-item">
+                    <div class="label">Website</div>
+                    <span>www.canaryai.org</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="nav-brand">
+                    <div class="logo-box">
+                        <img src="logo.jpeg" alt="Canary AI Logo"
+                            style="width:28px;height:28px;object-fit:contain;border-radius:4px;" />
+                    </div>
+                    <span class="brand-name">Canary AI</span>
+                </a>
+                <p>AI-powered quantitative finance consulting, research, and an elite training institute for the next
+                    generation of quant professionals.</p>
+            </div>
+
+            <div class="footer-col">
+                <h6>Services</h6>
+                <ul>
+                    <li><a href="#services">Quant Trading Systems</a></li>
+                    <li><a href="#services">AI Risk Management</a></li>
+                    <li><a href="#services">Fintech Consulting</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h6>Institute</h6>
+                <ul>
+                    <li><a href="#institute">Fellowship Program</a></li>
+                    <li><a href="#institute">Sponsored Track</a></li>
+                    <li><a href="#institute">Self-Sponsored Track</a></li>
+                    <li><a href="#institute">Career Progression</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h6>Company</h6>
+                <ul>
+                    <li><a href="#top">About Canary AI</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="yr"></span> Canary AI – Consulting, Research &amp; Institute. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/canary-ai-3b74503a5/" class="social-btn" title="LinkedIn">in</a>
+                <a href="#" class="social-btn" title="Twitter / X">𝕏</a>
+                <a href="#" class="social-btn" title="GitHub">⌥</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript (loaded at end of body for best performance) -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers – Canary AI</title>
+    <meta name="description"
+        content="Join Canary AI – explore open roles and fellowship opportunities in quantitative finance, AI research, and fintech." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        /* ── Careers-page specific styles ── */
+        .page-hero {
+            position: relative;
+            z-index: 1;
+            padding: 7rem 2rem 5rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .page-hero .hero-grid {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background-image:
+                linear-gradient(rgba(99, 102, 241, .06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, .06) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%);
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2rem, 5.5vw, 3.6rem);
+            font-weight: 900;
+            letter-spacing: -.04em;
+            line-height: 1.1;
+            animation: fadeUp .7s .1s ease both;
+        }
+
+        .page-hero p {
+            margin-top: 1.25rem;
+            color: var(--muted);
+            font-size: 1.05rem;
+            max-width: 580px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            animation: fadeUp .7s .2s ease both;
+        }
+
+        /* Why join */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .why-card {
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            background: rgba(99, 102, 241, .04);
+            transition: transform .3s, border-color .3s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(99, 102, 241, .28);
+        }
+
+        .why-icon {
+            font-size: 1.75rem;
+            margin-bottom: .75rem;
+        }
+
+        .why-card h4 {
+            font-size: .97rem;
+            font-weight: 700;
+            margin-bottom: .5rem;
+        }
+
+        .why-card p {
+            color: var(--muted);
+            font-size: .855rem;
+            line-height: 1.7;
+        }
+
+        /* Job listings */
+        .jobs-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .job-card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 1.75rem 2rem;
+            backdrop-filter: blur(16px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            transition: transform .3s, border-color .3s, box-shadow .3s;
+        }
+
+        .job-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245, 158, 11, .25);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, .3);
+        }
+
+        .job-info {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .job-dept {
+            display: inline-block;
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+            border-radius: 999px;
+            padding: .2rem .75rem;
+            margin-bottom: .6rem;
+        }
+
+        .dept-quant {
+            background: rgba(245, 158, 11, .12);
+            color: var(--amber);
+        }
+
+        .dept-ai {
+            background: rgba(99, 102, 241, .12);
+            color: #a5b4fc;
+        }
+
+        .dept-tech {
+            background: rgba(16, 185, 129, .12);
+            color: #6ee7b7;
+        }
+
+        .dept-ops {
+            background: rgba(239, 68, 68, .12);
+            color: #fca5a5;
+        }
+
+        .dept-fellow {
+            background: rgba(251, 191, 36, .12);
+            color: #fde68a;
+        }
+
+        .job-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: .35rem;
+        }
+
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .6rem;
+            margin-top: .5rem;
+        }
+
+        .job-tag {
+            font-size: .75rem;
+            color: var(--subtle);
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: .15rem .6rem;
+        }
+
+        .job-actions {
+            display: flex;
+            gap: .75rem;
+            align-items: center;
+        }
+
+        /* Fellowship CTA */
+        .fellow-cta {
+            max-width: 860px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(245, 158, 11, .1), rgba(99, 102, 241, .1));
+            border: 1px solid rgba(245, 158, 11, .22);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(16px);
+        }
+
+        .fellow-cta::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: -20%;
+            width: 260px;
+            height: 260px;
+            background: radial-gradient(circle, rgba(245, 158, 11, .12), transparent 70%);
+            pointer-events: none;
+        }
+
+        .fellow-cta h2 {
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
+            font-weight: 800;
+            letter-spacing: -.03em;
+            margin-bottom: .75rem;
+        }
+
+        .fellow-cta p {
+            color: var(--muted);
+            font-size: .95rem;
+            margin-bottom: 2rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Apply modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(2, 8, 23, .85);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(6px);
+            padding: 1rem;
+        }
+
+        .modal-overlay.open {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--bg2);
+            border: 1px solid var(--border2);
+            border-radius: 24px;
+            padding: 2.5rem;
+            max-width: 520px;
+            width: 100%;
+            position: relative;
+            animation: fadeUp .4s ease both;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: .9rem;
+            padding: .3rem .65rem;
+        }
+
+        .modal h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: .4rem;
+        }
+
+        .modal .role-label {
+            color: var(--amber);
+            font-size: .82rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1.1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--muted);
+            margin-bottom: .4rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid var(--border2);
+            border-radius: 10px;
+            padding: .7rem 1rem;
+            color: var(--text);
+            font-family: inherit;
+            font-size: .9rem;
+            outline: none;
+            transition: border-color .25s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--amber);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .form-group select option {
+            background: var(--bg2);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        @media(max-width:480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-14px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(6px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══ NAVBAR ═══ -->
+    <nav>
+        <a href="index.html" class="nav-brand">
+            <div class="logo-box">
+                <img src="logo.jpeg" alt="Canary AI Logo"
+                    style="width:28px;height:28px;object-fit:contain;border-radius:4px;" />
+            </div>
+            <span class="brand-name">Canary AI</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#process">Process</a></li>
+            <li><a href="index.html#institute">Institute</a></li>
+            <li><a href="index.html#testimonials">Reviews</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="careers.html" style="color:var(--amber)">Careers</a></li>
+            <li><a href="index.html#contact" class="nav-cta-btn">Contact Us</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="index.html#services" onclick="closeMobile()">Services</a></li>
+            <li><a href="index.html#institute" onclick="closeMobile()">Institute</a></li>
+            <li><a href="careers.html" onclick="closeMobile()">Careers</a></li>
+            <li><a href="index.html#contact" onclick="closeMobile()">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- ═══ PAGE HERO ═══ -->
+    <section class="page-hero">
+        <div class="hero-grid"></div>
+        <div class="hero-badge" style="animation:fadeDown .7s ease both">💼 Careers at Canary AI</div>
+        <h1>Build the Future of Finance<br /><em
+                style="font-style:normal;background:linear-gradient(90deg,var(--amber),#f97316,var(--indigo2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">with
+                Canary AI</em></h1>
+        <p>Join a team of quant researchers, AI engineers, and finance professionals working on cutting-edge trading
+            systems and financial technologies.</p>
+    </section>
+
+    <!-- ═══ WHY JOIN ═══ -->
+    <section class="sec sec-alt">
+        <div class="sec-hd reveal">
+            <span class="eyebrow">Why Canary AI</span>
+            <h2 class="sec-title">Why Work With Us</h2>
+            <p class="sec-sub">More than a job — a launchpad into the world of quantitative AI.</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card reveal">
+                <div class="why-icon">🔬</div>
+                <h4>Real Research Work</h4>
+                <p>Work directly on live AI models, trading systems, and fintech products from day one — no busywork.
+                </p>
+            </div>
+            <div class="why-card reveal">
+                <div class="why-icon">🧠</div>
+                <h4>Elite Mentorship</h4>
+                <p>Get guidance from experienced quant researchers, algo traders, and AI engineers in your field.</p>
+            </div>
+            <div class="why-card reveal">
+                <div class="why-icon">🚀</div>
+                <h4>Fast Career Growth</h4>
+                <p>High performers move fast — from intern to researcher to full-time based on capability, not
+                    seniority.</p>
+            </div>
+            <div class="why-card reveal">
+                <div class="why-icon">🌐</div>
+                <h4>Remote Friendly</h4>
+                <p>Work from anywhere in India. We focus on output and impact, not office hours.</p>
+            </div>
+            <div class="why-card reveal">
+                <div class="why-icon">💰</div>
+                <h4>Performance Incentives</h4>
+                <p>Exceptional contributors earn stipends, bonuses, and equity-like performance rewards.</p>
+            </div>
+            <div class="why-card reveal">
+                <div class="why-icon">📈</div>
+                <h4>Market Exposure</h4>
+                <p>Work with real financial data, live markets, and production-grade systems that trade real capital.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ OPEN ROLES ═══ -->
+    <section class="sec" id="open-roles">
+        <div class="sec-hd reveal">
+            <span class="eyebrow">Open Positions</span>
+            <h2 class="sec-title">Current Openings</h2>
+            <p class="sec-sub">We regularly seek exceptional talent across research, engineering, and finance.</p>
+        </div>
+
+        <!-- No openings state -->
+        <div class="jobs-wrap reveal">
+            <div
+                style="text-align:center;padding:4rem 2rem;border:1px dashed var(--border2);border-radius:24px;background:rgba(255,255,255,.02);">
+                <div style="font-size:3rem;margin-bottom:1.25rem;">🔍</div>
+                <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:.6rem;">No Open Positions Right Now</h3>
+                <p style="color:var(--muted);font-size:.95rem;max-width:460px;margin:0 auto 2rem;line-height:1.8;">We
+                    don't have any active job listings at the moment, but we're always interested in hearing from
+                    talented people. Send us an open application and we'll keep you in mind.</p>
+                <a href="mailto:canaryailtd@gmail.com?subject=Open Application" class="btn btn-primary">📩 Send Open
+                    Application</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FELLOWSHIP CTA ═══ -->
+    <section class="sec sec-alt">
+        <div class="fellow-cta reveal">
+            <span class="eyebrow">Don't See Your Role?</span>
+            <h2>We're Always Looking for Exceptional People</h2>
+            <p>Send us your CV and tell us what you bring to the table. If you're talented and passionate about AI and
+                markets, we want to hear from you.</p>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1">
+                <a href="mailto:canaryailtd@gmail.com?subject=Open Application" class="btn btn-primary">📩 Send Open
+                    Application</a>
+                <a href="index.html#institute" class="btn btn-outline">Learn about Fellowship →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-brand">
+                    <div class="logo-box">
+                        <img src="logo.jpeg" alt="Canary AI Logo"
+                            style="width:28px;height:28px;object-fit:contain;border-radius:4px;" />
+                    </div>
+                    <span class="brand-name">Canary AI</span>
+                </a>
+                <p>AI-powered quantitative finance consulting, research, and an elite training institute for the next
+                    generation of quant professionals.</p>
+            </div>
+            <div class="footer-col">
+                <h6>Company</h6>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#institute">Institute</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h6>Careers</h6>
+                <ul>
+                    <li><a href="#open-roles">Open Roles</a></li>
+                    <li><a href="index.html#institute">Fellowship Program</a></li>
+                    <li><a href="mailto:canaryailtd@gmail.com?subject=Open Application">Open Application</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h6>Contact</h6>
+                <ul>
+                    <li><a href="mailto:canaryailtd@gmail.com">canaryailtd@gmail.com</a></li>
+                    <li><a href="index.html#contact">Book a Consultation</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="yr"></span> Canary AI – Consulting, Research &amp; Institute. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/canary-ai-3b74503a5/" class="social-btn" title="LinkedIn">in</a>
+                <a href="#" class="social-btn" title="Twitter / X">𝕏</a>
+                <a href="#" class="social-btn" title="GitHub">⌥</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
